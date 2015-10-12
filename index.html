@@ -653,7 +653,7 @@
 				$.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran=day"+"&limit=2",
+                    url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran="+echartsOption.gran+"&limit=2",
                     success: function (result) { */
                     	var result = {"data":[{"open_with_param":3,"install_with_param":2},{"open_with_param":4,"install_with_param":1}]};
                     	$("#open_today").html(result.data[0].open_with_param);

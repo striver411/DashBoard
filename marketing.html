@@ -546,7 +546,7 @@
 				$.ajax({
 	                    type: "POST",
 	                    dataType: "json",
-	                    url: "/"+appNames[tableOption.appIndex].appid+"/channels",
+	                    url: "/apps/"+appNames[tableOption.appIndex].appid+"/channels",
 	                    data: {//$('#new-channel-form').serialize(), 
 	                    	"typename" : $('#channel-type-text').val(),
 	                    	"channelname" : $('#channel-name-text').val(),
