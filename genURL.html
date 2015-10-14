@@ -357,7 +357,7 @@
 												</div>
 														
 												<div class="form-group">
-													<label class="col-sm-3 control-label no-padding-right" for="identity"> 验证信息(Identity) </label>
+													<label class="col-sm-3 control-label no-padding-right" for="identity"> 验证信息(identity) </label>
 			
 													<div class="col-sm-9">
 													<div class="clearfix">
@@ -517,7 +517,7 @@
 
 		   	}
 		   	function generateURL() {
-		   		var URL = "Identity=" + $("#identity").val() + "&channelName1=" +  $("#channelName1").val();
+		   		var URL = "identity=" + $("#identity").val() + "&channelName1=" +  $("#channelName1").val();
 		   		for (var i = 2; i <= genUrlOption.channelNum; i ++) {
 		   			var channelID =  "channelName" + i;
 		   			URL += "&" + channelID + "=" + $("#" + channelID).val();
