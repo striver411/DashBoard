@@ -218,7 +218,7 @@
 						<b class="arrow"></b>
 					</li>
 
-					<li class="active">
+					<li class="">
 						<a href="index.html">
 							<i class="menu-icon fa fa-list-alt"></i>
 							<span class="menu-text"> 数据概览 </span>
@@ -269,6 +269,14 @@
 						<a href="marketing.html">
 							<i class="menu-icon fa fa-link "></i>
 							<span class="menu-text"> 渠道监测 </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+
+					<li class="active">
+						<a href="genURL.html">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> URL生成 </span>
 						</a>
 						<b class="arrow"></b>
 					</li>
@@ -324,6 +332,7 @@
 								Dashboard
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
+									URL生成
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -339,28 +348,28 @@
 										<div class="widget-main no-padding">
 											<div class="form-horizontal" role="form" id="validation-form">
 												<div class="form-group">
-													<label class="col-sm-3 control-label no-padding-right" for="name"> 应用名称 </label>
+													<label class="col-sm-3 control-label no-padding-right" for="appID"> 应用名称 </label>
 													<div class="col-sm-9">
 														<div class="clearfix">
-														<label class="col-sm-5 control-label center" for="apptype"> APPID </label>
+														<label class="col-sm-5 control-label center" for="apptype" id = "appID"> APPID </label>
 														</div>
 													</div>
 												</div>
 														
 												<div class="form-group">
-													<label class="col-sm-3 control-label no-padding-right" for="name"> 验证信息(Identity) </label>
+													<label class="col-sm-3 control-label no-padding-right" for="identity"> 验证信息(Identity) </label>
 			
 													<div class="col-sm-9">
 													<div class="clearfix">
-														<input class="col-xs-10 col-sm-5" data-rel="tooltip" type="text" id="name" name="name" placeholder="" data-placement="bottom" />
+														<input class="col-xs-10 col-sm-5" data-rel="tooltip" type="text" id="identity" name="identity" placeholder="" data-placement="bottom" />
 													</div>
 													</div>
 												</div>
 												<div class="form-group">
-													<label class="col-sm-3 control-label no-padding-right" for="pkgname"> 渠道名称(channel) </label>
+													<label class="col-sm-3 control-label no-padding-right" for="channelName1"> 渠道名称(channel) </label>
 													<div class="col-sm-9">
 													<div class="clearfix">
-															<input type="text" id="pkgname" name="pkgname" class="col-xs-10 col-sm-5" placeholder="" />
+															<input type="text" id="channelName1" name="channelName1" class="col-xs-10 col-sm-5" placeholder="" />
 															<span style="margin-top: 4px;" class="help-button" onclick = "addChannelInput()">＋</span>
 													</div>
 													</div>
@@ -379,11 +388,11 @@
 												</div>
 
 												<div class="form-group">
-													<input type="text" id="addValue" name="addValue" class="col-sm-offset-2 col-sm-1" />
+													<input type="text" id="addKey1" name="addKey1" class="col-sm-offset-2 col-sm-1" />
 			
 													<div class="col-sm-9">
 														<div class="clearfix">
-															<input type="text" id="addKey" name="addKey" class="col-xs-10 col-sm-5" />
+															<input type="text" id="addValue1" name="addValue1" class="col-xs-10 col-sm-5" />
 															<span style="margin-top: 4px;" class="help-button" onclick = "addKeyValue()">＋</span>
 														</div>
 													</div>
@@ -392,11 +401,20 @@
 												<div id = "keyValueList">
 												</div>
 
+												
+
 												<div class="form-actions center">
-													<button type="input" class="btn btn-sm btn-success">
+												    <div class="form-group">
+													<button type="input" class="btn btn-success" id="genUrlBotton" onclick = "generateURL()" style="padding:2px">
 														生成URL
 														<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
 													</button>
+													</div>
+
+													<div id = "urlResult">
+												 
+													</div>
+													
 												</div>
 											</div>
 										</div>
@@ -486,12 +504,33 @@
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+			var genUrlOption = {};
+			genUrlOption.channelNum = 1;
+			genUrlOption.keyvalueNum = 1;
 		   	function addChannelInput() {
-		   		$("#channelInputList").append('<div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="pkgname"></label><div class="col-sm-9"><div class="clearfix"><input type="text" id="pkgname" name="pkgname" class="col-xs-10 col-sm-5" placeholder="" /></div></div></div>');
+		   		genUrlOption.channelNum ++;
+		   		$("#channelInputList").append('<div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="pkgname"></label><div class="col-sm-9"><div class="clearfix"><input type="text" id="channelName'+genUrlOption.channelNum+'" name="channelName'+genUrlOption.channelNum+'" class="col-xs-10 col-sm-5" placeholder="" /></div></div></div>');
 		   	}
 		   	function addKeyValue() {
-		   		$("#keyValueList").append('<div class="form-group"><input type="text" id="addValue" name="addValue" class="col-sm-offset-2 col-sm-1" /><div class="col-sm-9"><div class="clearfix"><input type="text" id="addKey" name="addKey" class="col-xs-10 col-sm-5" /></div></div></div>');
+		   		genUrlOption.keyvalueNum ++;
+		   		$("#keyValueList").append('<div class="form-group"><input type="text" id="addKey'+genUrlOption.keyvalueNum+'" name="addKey'+genUrlOption.keyvalueNum+'" class="col-sm-offset-2 col-sm-1" /><div class="col-sm-9"><div class="clearfix"><input type="text" id="addValue'+genUrlOption.keyvalueNum+'" name="addValue'+genUrlOption.keyvalueNum+'" class="col-xs-10 col-sm-5" /></div></div></div>');
 
+		   	}
+		   	function generateURL() {
+		   		var URL = "Identity=" + $("#identity").val() + "&channelName1=" +  $("#channelName1").val();
+		   		for (var i = 2; i <= genUrlOption.channelNum; i ++) {
+		   			var channelID =  "channelName" + i;
+		   			URL += "&" + channelID + "=" + $("#" + channelID).val();
+		   		}
+		   		for (var i = 1; i <= genUrlOption.keyvalueNum; i ++) {
+		   			var keyID = "addKey" + i, valueID = "addValue" + i;
+		   			URL += "&" + keyID + "=" + $("#" + keyID).val();
+		   			URL += "&" + valueID + "=" + $("#" + valueID).val();
+		   		}
+		   		URL = "http://fds.so/?" + URL;
+		   		URL = encodeURI(URL);
+		   		console.log(URL);
+		   		$("#urlResult").html('<div class="form-group" style="color:red"><label class="col-sm-3 control-label no-padding-right" for="channelName1">Url: </label><div class="col-sm-9"><div class="clearfix"><input type="text" id="channelName1" name="channelName1" class="col-xs-10 col-sm-9" readonly="readonly" value="' + URL + '" style="color:red" /></div></div></div>');
 		   	}
 
 		   	/*
