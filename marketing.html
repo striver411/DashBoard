@@ -286,14 +286,14 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-
+					<!--
 					<li class="">
 						<a href="genURL.html">
 							<i class="menu-icon fa fa-list-alt"></i>
 							<span class="menu-text"> URL生成 </span>
 						</a>
 						<b class="arrow"></b>
-					</li>
+					</li>  -->
 
 				</ul><!-- /.nav-list -->
 
@@ -447,19 +447,19 @@
                                                     <div class="modal-body">
                                                             <div class="form-group">
                                                                 <label for="channel-type-text" class="control-label">渠道类型</label>
-                                                                <input type="text" class="form-control" id="channel-type-text">
+                                                                <input type="text" class="form-control" id="channel-type-text"  oninput="updataURL()">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="channel-name-text" class="control-label">渠道名称</label>
-                                                                <input type="text" class="form-control" id="channel-name-text">
+                                                                <input type="text" class="form-control" id="channel-name-text" oninput="updataURL()">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="channel-number-text" class="control-label">渠道编号及备注</label>
-                                                                <input type="text" class="form-control" id="channel-number-text">
+                                                                <input type="text" class="form-control" id="channel-number-text" oninput="updataURL()">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="channel-url-text" class="control-label">URL</label>
-                                                                <input type="text" class="form-control" id="channel-url-text">
+                                                                <input type="text" class="form-control" id="channel-url-text" readonly="readonly" style="color:red" >
                                                             </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -550,6 +550,14 @@
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+			function updataURL() {
+				var URL = "http://fds.so/?";
+				URL += "channeltype=" + $("#channel-type-text").val();
+				URL += "&channelname=" + $("#channel-name-text").val();
+				URL += "&channelnumber=" + $("#channel-number-text").val();
+
+				$('#channel-url-text').val(URL);
+			}
 			function PostToBackEnd() {
 				console.log($('#channel-url-text').val());
 				$.ajax({
