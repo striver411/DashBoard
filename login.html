@@ -91,7 +91,7 @@
 	</head>
 ​
 	<body  style='background-image: url("assets/images/bg_blue.png"); background-size: 100% auto;'>
-		        <div id = 'pop-div'; class = "pop-box" style="width:60%; height:70%">
+		        <div id = 'pop-div'; class = "pop-box" style="width:60%; height:70%; left:20%; top:15%">
         <div id='pop-div1' style='width: 100%; height:94%; border-radius:5px;' class="form-horizontal pop-box3">  
 
             <div class="form-group" style="height : 10%">
@@ -336,14 +336,13 @@
 		                                  .appendTo("body")   
 		                                  .fadeIn(200); 
 		        */  
-		        div_obj.animate({left: '20%',    
-		                         top: '15%', opacity: "show" }, "slow");   
+		        div_obj.animate({opacity: "show"}, "slow");   
 		                        
 		    }   
 		      
 		    function hideDiv(div_id) {   
 		        //$("#mask").remove();   
-		        $("#" + div_id).animate({left: 0, top: 0, opacity: "hide" }, "slow");   
+		        $("#" + div_id).animate({opacity: "hide" }, "slow");   
 		    }  
 			function submitToBackEnd() {
 				//console.log( $("#username_login").val() + " " + $("#password_login").val());	
