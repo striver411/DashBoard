@@ -81,13 +81,6 @@
         }  
 
 		</style>
-		<script>
-         $(document).ready(function(){
-           $("input").click(function(){
-            $(this).css({"background-color":"black","opacity":"0.6"});
-          });
-         });
-        </script>
 	</head>
 ​
 	<body  style='background-image: url("assets/images/bg_blue.png"); background-size: 100% auto;'>
@@ -321,6 +314,11 @@
 		<script src="assets/js/ace/ace.searchbox-autocomplete.js"></script>
 
 		<script type="text/javascript">
+         $(document).ready(function(){
+           $("input").click(function(){
+            $(this).css({"background-color":"black","opacity":"0.6"});
+          });
+         });
 			function popupDiv(div_id) {   
 		        var div_obj = $("#"+div_id);  
 		        var windowWidth = document.body.clientWidth;       
