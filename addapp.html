@@ -49,12 +49,16 @@
 		.dropdown-content li.active{
 			border-left: 4px solid #00adef;
 		}
+		.nav-user-photo {
+				height: 30px;
+				width: 30px;
+			}
 		</style>
 	</head>
 
 	<body class="no-skin">
 		<!-- #section:basics/navbar.layout -->
-		<div id="navbar" class="navbar navbar-default" style="background-color: #404040">
+		<div id="navbar" class="navbar navbar-default" style="background-color: white">
 			<script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
 			</script>
@@ -74,10 +78,10 @@
 				<!-- /section:basics/sidebar.mobile.toggle -->
 				<div class="navbar-header pull-left">
 					<!-- #section:basics/navbar.layout.brand -->
-					<a href="#" class="navbar-brand">
+					<a href="#" class="navbar-brand" style="padding-bottom:0px">
 						<small>
-							<i> <img src="assets/images/logo.png" width="100px" height="20px"> </i>
-							Admin
+							<i> <img src="assets/images/logo_inside.png" width="23%" style="padding-left:3%"> </i>
+							
 						</small>
 					</a>
 
@@ -154,15 +158,15 @@
 								</li>
 							</ul>
 						</li> -->
-						<li class="grey">
+						<li class="white-opaque">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/avatar2.png" />
-								<span class="user-info">
+								<img class="nav-user-photo" src="assets/images/user_ico.png" />
+								<span class="user-info" style="color:black">
 									<small>欢迎,</small>
 									Guest
 								</span>
 
-								<i class="ace-icon fa fa-caret-down"></i>
+								<i class="ace-icon fa fa-caret-down" style="color:black"></i>
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
