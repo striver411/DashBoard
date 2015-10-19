@@ -54,30 +54,18 @@
 
 	<body class="no-skin">
 		<!-- #section:basics/navbar.layout -->
-		<div id="navbar" class="navbar navbar-default" style="background-color: #404040">
-			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
+		<div id="navbar" class="navbar navbar-default" style="background-color: white" style="padding-bottom:0">
 
-			<div class="navbar-container" id="navbar-container">
-				<!-- #section:basics/sidebar.mobile.toggle -->
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
+			<div class="navbar-container" id="navbar-container" style="padding-bottom:0" >
+			
 
 				<!-- /section:basics/sidebar.mobile.toggle -->
-				<div class="navbar-header pull-left">
+				<div class="navbar-header pull-left col-sm-6">
 					<!-- #section:basics/navbar.layout.brand -->
-					<a href="#" class="navbar-brand">
+					<a href="#" class="navbar-brand" style="padding-bottom:0px">
 						<small>
-							<i> <img src="assets/images/logo.png" width="100px" height="20px"> </i>
-							Admin
+							<i> <img src="assets/images/logo_inside.png" width="23%" style="padding-left:3%"> </i>
+							
 						</small>
 					</a>
 
@@ -89,11 +77,14 @@
 				</div>
 
 				<!-- #section:basics/navbar.dropdown -->
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
-						<li class="green">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+				<div class="navbar-buttons navbar-header pull-right col-sm-6" role="navigation" >
+					<div class="nav">
+					<div class="col-sm-3 col-sm-offset-6" >
+						<li class="" >
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo col-sm-5" src="assets/images/user_ico.png" style="height:100%"  />
 								<span><b id="app-title"></b></span>
+
 								<i class="ace-icon fa fa-chevron-down icon-animated-vertical"></i>
 							</a>
 
@@ -125,12 +116,15 @@
                                 </li>  -->
 							</ul>
 						</li>
-						<li class="grey">
+					</div>
+					<div class="col-sm-3" >
+						<li class="">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/avatar2.png" alt="<?php echo Yii::app()->user->id; ?>'s Photo" />
+								<img class="nav-user-photo col-sm-7" src="assets/images/user_ico.png" style="height:20%" />
 								<span class="user-info">
 									<small>欢迎,</small>
-									Guest
+									guest
+									
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -162,8 +156,10 @@
 							</ul>
 						</li>
 
+
 						<!-- /section:basics/navbar.user_menu -->
-					</ul>
+					</div>
+					</div>
 				</div>
 
 				<!-- /section:basics/navbar.dropdown -->
@@ -322,13 +318,17 @@
 										<div class="infobox infobox-green">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
+												<img src = 'assets/images/install_today_ico.png' style = "width:100%"/>
+											    <!--
 												<span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+												-->
 											</div>
 
 											<!-- /section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-data">
-												<span class="infobox-data-number" id="install_today"></span>
-												<div class="infobox-content"><b>今日安装</b></div>
+												<div class="infobox-content center" style="color:grey"><b>今日安装</b></div>
+												<span class="infobox-data-number center" id="install_today" style="color:grey"></span>
+												
 											</div>
 
 											<!-- <div class="badge badge-success">
@@ -339,7 +339,11 @@
 										<div class="infobox infobox-green">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
+												<!--
 												<span class="sparkline" data-values="154,94,100,170,224,196,128,202,177"></span>
+												-->
+												<img src = 'assets/images/use_today_ico.png' style = "width:100%"/>
+
 											</div>
 <!-- 											<div class="easy-pie-chart percentage" data-percent="42" data-size="46"> -->
 <!-- 												<span class="percent">42</span>% -->
@@ -347,8 +351,8 @@
 
 											<!-- /section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-data">
-												<span class="infobox-data-number" id="open_today"></span>
-												<div class="infobox-content"><b>今日使用</b></div>
+												<div class="infobox-content center" style="color:grey"><b>今日使用</b></div>
+												<span class="infobox-data-number center" id="open_today" style="color:grey"></span>	
 											</div>
 
 											<!-- <div class="badge badge-success">
@@ -360,13 +364,16 @@
 										<div class="infobox infobox-blue">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
+												<!--
 												<span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+												-->
+												<img src = 'assets/images/install_yes_ico.png' style = "width:100%"/>
 											</div>
 
 											<!-- /section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-data">
-												<span class="infobox-data-number" id="install_last_day"></span>
-												<div class="infobox-content"><b>昨日安装</b></div>
+												<div class="infobox-content center" style="color:grey"><b>昨日安装</b></div>
+												<span class="infobox-data-number center" id="install_last_day" style="color:grey"></span>		
 											</div>
 
 											<!-- <div class="badge badge-success">
@@ -377,7 +384,10 @@
 										<div class="infobox infobox-blue">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
+												<!--
 												<span class="sparkline" data-values="154,94,100,170,224,196,128,202,177"></span>
+												-->
+												<img src = 'assets/images/use_yes_ico.png' style = "width:100%"/>
 											</div>
 <!-- 											<div class="easy-pie-chart percentage" data-percent="42" data-size="46"> -->
 <!-- 												<span class="percent">42</span>% -->
@@ -385,8 +395,8 @@
 
 											<!-- /section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-data">
-												<span class="infobox-data-number" id="open_last_day"></span>
-												<div class="infobox-content"><b>昨日使用</b></div>
+												<div class="infobox-content center" style="color:grey"><b>昨日使用</b></div>
+												<span class="infobox-data-number center" id="open_last_day" style="color:grey"></span>
 											</div>
 
 											<!-- <div class="badge badge-success">
@@ -668,7 +678,7 @@
                     dataType: "json",
                     url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran="+echartsOption.gran+"&limit=2",
                     success: function (result) { */
-                    	var result = {"data":[{"open_with_param":3,"install_with_param":2},{"open_with_param":4,"install_with_param":1}]};
+                    	var result = {"data":[{"open_with_param":321,"install_with_param":213},{"open_with_param":432,"install_with_param":123}]};
                     	$("#open_today").html(result.data[0].open_with_param);
                     	$("#install_today").html(result.data[0].install_with_param);
                         $("#open_last_day").html(result.data[1].open_with_param);
