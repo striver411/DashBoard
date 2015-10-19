@@ -49,7 +49,13 @@
 			.dropdown-content li.active{
 				border-left: 4px solid #00adef;
 			}
+			.nav-user-photo {
+				height: 30px;
+				width: 30px;
+			}
 		</style>
+
+		<link rel="stylesheet" href="assets/css/qd.css" />
 	</head>
 
 	<body class="no-skin">
@@ -77,15 +83,14 @@
 				</div>
 
 				<!-- #section:basics/navbar.dropdown -->
-				<div class="navbar-buttons navbar-header pull-right col-sm-6" role="navigation" >
-					<div class="nav">
-					<div class="col-sm-3 col-sm-offset-6" >
-						<li class="" >
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo col-sm-5" src="assets/images/user_ico.png" style="height:100%"  />
-								<span><b id="app-title"></b></span>
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+					<li class="white-opaque">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<img class="nav-user-photo" src="assets/images/user_ico.png"  />
+								<span><b id="app-title" style="color:black"></b></span>
 
-								<i class="ace-icon fa fa-chevron-down icon-animated-vertical"></i>
+								<i class="ace-icon fa fa-caret-down" style="color:black"></i>
 							</a>
 
 							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
@@ -116,18 +121,17 @@
                                 </li>  -->
 							</ul>
 						</li>
-					</div>
-					<div class="col-sm-3" >
-						<li class="">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo col-sm-7" src="assets/images/user_ico.png" style="height:20%" />
-								<span class="user-info">
+					</li>
+					<li class="white-opaque" >
+	                   <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/images/user_ico.png" />
+								<span class="user-info" style="color:black">
 									<small>欢迎,</small>
 									guest
 									
 								</span>
 
-								<i class="ace-icon fa fa-caret-down"></i>
+								<i class="ace-icon fa fa-caret-down" style="color:black"></i>
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
@@ -154,12 +158,12 @@
 									</a>
 								</li>
 							</ul>
-						</li>
+					</li>
 
 
 						<!-- /section:basics/navbar.user_menu -->
-					</div>
-					</div>
+
+				    </ul>
 				</div>
 
 				<!-- /section:basics/navbar.dropdown -->
@@ -313,7 +317,7 @@
 								
 								<div class="row">
 									<div class="space-6"></div>
-									<div class="col-sm-12 infobox-container">
+									<div class="col-infobox infobox-container">
 										<!-- #section:pages/dashboard.infobox -->
 										<div class="infobox infobox-green">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
@@ -481,7 +485,7 @@
 										</div>
 									</div>
 								</div> -->
-								<div id="datachart" class="col-sm-12" style="height:450px;">
+								<div id="datachart" class="col-sm-12" >
 								<!--
 									<div class="col-sm-6">
 										<div id="main" style="height:400px;"></div>
