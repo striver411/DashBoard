@@ -101,7 +101,7 @@
 					<ul class="nav ace-nav">
 					<li class="white-opaque">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<img class="nav-user-photo" src="assets/images/user_ico.png"  />
+								<img class="nav-user-photo" src="assets/images/app_icon.png"  />
 								<span><b id="app-title" style="color:black"></b></span>
 
 								<i class="ace-icon fa fa-caret-down" style="color:black"></i>
@@ -694,7 +694,7 @@
 				$.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran="+echartsOption.gran+"&limit=2",
+                    url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran=day&limit=2",
                     success: function (result) { */
                     	var result = {"data":[{"open_with_param":321,"install_with_param":213},{"open_with_param":432,"install_with_param":123}]};
                     	$("#open_today").html(result.data[0].open_with_param);
@@ -714,12 +714,12 @@
 				if (echartsOption.chartType == 0)
 						$("#datachart").html('<div class="col-sm-6"><div id="main" style="height:400px;"></div></div><div class="col-sm-6"><div id="main1" style="height:400px;"></div></div>');
 					else if (echartsOption.chartType == 1) 
-						   $("#datachart").html(' <div class="col-sm-12"><div id="wechatpie" style="height:400px;"></div></div>');
+						   $("#datachart").html(' <div class="col-sm-12" style="height:450px"><div id="wechatpie" style="height:400px;"></div></div>');
 				/*
 				$.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran="+echartsOption.gran+"&limit=15",
+                    url: "/apps/"+appNames[echartsOption.appIndex].appid+"?typename="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].typename+"&channelname="+appNames[echartsOption.appIndex].channelinfo[echartsOption.channelIndex].channelname+"&gran="+echartsOption.gran+"&limit=10",
                     success: function (result) { */
 
 
@@ -968,7 +968,7 @@
 							);
                 /*         },
                     error: function(data) {
-	                    //alert("error2:"+data.responseText);
+	                    alert("error2:"+data.responseText);
                     }
                 }); */ 
 
