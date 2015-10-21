@@ -766,7 +766,7 @@
             	                function (ec) {
             	                    var myChart = ec.init(document.getElementById('main'));
             	                    var option = {
-                                            color : ["#ff7f50"],
+                                            color : ["#ff7f50","#87cefa"],
                                 
             	                    	    title : {
             	                    	    //    text: '安装',
@@ -776,7 +776,7 @@
             	                    	        trigger: 'axis'
             	                    	    },
             	                    	    legend: {
-            	                    	        data:['新用户安装']
+            	                    	        data:['新用户安装','老用户打开']
             	                    	    },
             	                    	    toolbox: {
             	                    	        show : true,
@@ -806,6 +806,17 @@
             	                    	            name:'新用户安装',
             	                    	            type:'line',
             	                    	            data:installlist,
+            	                    	            markPoint : {
+            	                    	                data : [
+            	                    	                    {type : 'max', name: '最大值'},
+            	                    	                    {type : 'min', name: '最小值'}
+            	                    	                ]
+            	                    	            }
+            	                    	        },
+            	                    	         {
+            	                    	            name:'老用户打开',
+            	                    	            type:'line',
+            	                    	            data:openlist,
             	                    	            markPoint : {
             	                    	                data : [
             	                    	                    {type : 'max', name: '最大值'},
