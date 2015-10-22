@@ -94,12 +94,6 @@
 						</small>
 					</a>
 
-
-					<!-- /section:basics/navbar.layout.brand -->
-
-					<!-- #section:basics/navbar.toggle -->
-
-					<!-- /section:basics/navbar.toggle -->
 				</div>
 
 				<!-- #section:basics/navbar.dropdown -->
@@ -181,7 +175,7 @@
 			</script>
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar responsive">
 				<script type="text/javascript">
 					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
@@ -203,44 +197,6 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-                    <!--
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-share-alt"></i>
-							<span class="menu-text"> Referrals </span>
-	
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-	
-						<b class="arrow"></b>
-	
-						<ul class="submenu">
-							<li class="" id="li-overview">
-								<a href="/referrals?overview">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Overview
-								</a>
-	
-								<b class="arrow"></b>
-							</li>
-							<li class="" id="li-rules">
-								<a href="/referrals?rules">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Reward Rules
-								</a>
-	
-								<b class="arrow"></b>
-							</li>
-							<li class="" id="li-influencers">
-								<a href="/referrals?influencers">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Influencers
-								</a>
-	
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>  -->
 					
 					<li class="active">
 						<a href="marketing.html">
@@ -249,14 +205,6 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-					<!--
-					<li class="">
-						<a href="genURL.html">
-							<i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text"> URL生成 </span>
-						</a>
-						<b class="arrow"></b>
-					</li>  -->
 
 				</ul><!-- /.nav-list -->
 
@@ -302,42 +250,10 @@
 									渠道监测
 								</small>
 							</h1>
-							<!-- 
-							<span class="col-sm-4" style="float: right;margin-top: -20px">
-								<label class="pull-right inline">
-									<small class="muted">Live:</small>
-
-									<input id="gritter-light" checked="" type="checkbox" class="ace ace-switch ace-switch-5" />
-									<span class="lbl middle"></span>
-								</label> 
-							</span>   -->
 						</div><!-- /.page-header -->
 
 						<div class="row">
 							<div class="col-xs-12">
-
-								<!--
-								<div class="row">
-									<div class="col-sm-12">
-										<label class="inline" style="margin-right: 10%;">
-											<input name="ARCHIVED" class="ace ace-checkbox-2" id="ARCHIVED" value="1" type="checkbox" />
-											<span class="lbl"> ARCHIVED</span>
-										</label>
-										<select style="margin-right: 5%;" id="campaign" name="campaign" class="select2" data-placeholder="标签" >
-											<option value="">  </option>
-										</select>
-										<select style="margin-right: 5%;" id="channel" name="channel" class="select2" data-placeholder="渠道类型" >
-											<option value="">  </option>
-										</select>
-										<select style="margin-right: 5%;" id="tags" name="tags" class="select2" data-placeholder="渠道名称" >
-											<option value="">  </option>
-										</select>
-										<span class="input-icon input-icon-right pull-right">
-											<input name="username" id="username" type="text" style="border-radius: 8px!important;;" class="form-control" placeholder="Search by name..." />
-											<i class="ace-icon fa fa-search"></i>
-										</span>
-									</div>
-								</div>   -->
 								<div class="space-6"></div>
 								<div class="row">
 									<div class="col-sm-12">
@@ -350,7 +266,6 @@
 														    <span class = "dropdown">
 															<span class="dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></span>
 															 <ul class="dropdown-menu" role="menu" id = "typeList">
-
 															 <!--
 																<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Java</a></li>
 											      				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">数据挖掘</a></li>
@@ -371,7 +286,6 @@
 												<tbody id="channelInfoList">
 													<!-- <tr>
 														<td class="center">-</td>
-
 														<td>
 															<a href="#">-</a>
 														</td>
@@ -477,10 +391,10 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
+		<script type="text/javascript">
+		 window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 		</script>
@@ -513,21 +427,21 @@
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+
 			function updataURL() {
 				var URL = "http://fds.so/?";
 				URL += "channeltype=" + $("#channel-type-text").val();
 				URL += "&channelname=" + $("#channel-name-text").val();
 				URL += "&channelnumber=" + $("#channel-number-text").val();
-
 				$('#channel-url-text').val(URL);
 			}
 			function PostToBackEnd() {
-				console.log($('#channel-url-text').val());
+				//console.log($('#channel-url-text').val());
 				$.ajax({
 	                    type: "POST",
 	                    dataType: "json",
 	                    url: "/apps/"+appNames[tableOption.appIndex].appid+"/channels",
-	                    data: {//$('#new-channel-form').serialize(), 
+	                    data: {
 	                    	"typename" : $('#channel-type-text').val(),
 	                    	"channelname" : $('#channel-name-text').val(),
 	                    	"remark" : $('#channel-number-text').val(),
@@ -541,28 +455,7 @@
 		               });
 			}
 
- 			/*
-			function getData(appid, gran) {
-                		result = {"applist":[{"appid":"9A935D78B9C86DB6","appname":"23123"},{"appid":"7B4503E397E153A9","appname":"3434"},{"appid":"44F250A9D4917B5C","appname":"啊啊啊"},{"appid":"1A9CB9ED76C7EF93","appname":"hkhk"},{"appid":"F506CC99F6FDE19A","appname":"啊啊啊啊"},{"appid":"E9FEA1FCF1A9BE6E","appname":"fads"}],"appname":"23123","appstats":{"data":[{"open":3,"install":2},{"open":4,"install":4},{"open":5,"install":4},{"open":2,"install":4},{"open":4,"install":6},{"open":1,"install":8},{"open":9,"install":2},{"open":8,"install":6},{"open":4,"install":3},{"open":6,"install":9}],"open_today":1,"install_today":2,"open_last_day":3,"install_last_day":4}};
-
-                		$("#app-title").html(result.appname);
-                		$("#applist").empty()
-                        for(var a in result.applist) {
-							$("#applist").append('<li class='+(result.applist[a].appname==result.appname?'active':'')+'>'+'<a href="javascript:getData('+a+')"><div class="clearfix"><span class="pull-left">'+result.applist[a].appname+'</span>'+
-								'<span class="pull-right"><i class="fa fa-check"></i></span></div></a></li>');
-							if (result.applist[a].appname==result.appname)
-								appidPre = a
-                        }
-            } */
             tableOption = {};
-
-            /*
-            function getAppname() {
-				var result = {"applist":[{"appid":"9A935D78B9C86DB6","appname":"23123"},{"appid":"7B4503E397E153A9","appname":"3434"},{"appid":"44F250A9D4917B5C","appname":"啊啊啊"}]};
-				appNames = result.applist;
-				tableOption.appIndex = 0;
-				printAppname();
-			} */
 
 			function getAppname() {
 				/*
@@ -587,13 +480,13 @@
 			getAppname();
 
 			function selectAppIndex(selectedAppIndex) {
-				console.log("selectAppIndex " + selectedAppIndex);
+				//console.log("selectAppIndex " + selectedAppIndex);
 				tableOption.appIndex = selectedAppIndex;
 				getChannelName();
 			}
 
 			function printAppname() {
-				console.log(appNames);
+				//console.log(appNames);
 				$("#app-title").html(appNames[tableOption.appIndex].appname);
 				for(var a in appNames) {
 					$("#applist").append('<li class='+(a==tableOption.appIndex?'active':'')+'>'+'<a href="javascript:selectAppIndex('+a+')"><div class="clearfix"><span class="pull-left">'+appNames[a].appname+'</span>'+'<span class="pull-right"><i class="fa fa-check"></i></span></div></a></li>');
@@ -621,7 +514,7 @@
 			}
 
 			function selectTypeIndex(selectedTypeIndex) {
-				console.log("selectTypeIndex " + selectedTypeIndex);
+				//console.log("selectTypeIndex " + selectedTypeIndex);
 				tableOption.typeIndex = selectedTypeIndex;
 				displayData();
 			}
@@ -643,10 +536,10 @@
 			            	var result = {"data":[{"typename":"搜索引擎", "channelname":"百度关键词", "remark":"百度_关键词_巴黎", "download":"156", "activate":"25%", "remainthreedays":"52%"}]};
 
 			            	//result = {};
-			            	console.log("displayData: ");
+			            	//console.log("displayData: ");
 			            	$("#channelInfoList").empty();
 			            	for (var a in result.data) {
-			            		 console.log(a);
+			            		 //console.log(a);
 			            		$("#channelInfoList").append('<tr><td class="center">'+result.data[a].typename+'</td><td>'+result.data[a].channelname+'</td><td class="hidden-xs">'+result.data[a].remark+'</td><td>NA</td><td class="hidden-480">'+result.data[a].download+'</td><td>'+result.data[a].activate+'</td><td>'+result.data[a].remainthreedays+'</td></tr>');
 			            	};
 			            	$("#noChannelDisp").empty();
@@ -671,7 +564,7 @@
 				$(".applistDrop a").click(function(){
 					var title=$(this).children("div").children("span.pull-left").html();
 					$("#app-title").html(title);
-					console.log("changeAppTitleTo "+ title);
+					//console.log("changeAppTitleTo "+ title);
 					$(this).parent().siblings().removeClass("active");
 					$(this).parent().addClass("active");
 				});

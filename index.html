@@ -85,96 +85,70 @@
 					<a href="#" class="navbar-brand" style="padding-bottom:0px">
 						<small>
 							<i> <img src="assets/images/logo_inside.png" width="23%" style="padding-left:3%"> </i>
-							
 						</small>
 					</a>
 
-					<!-- /section:basics/navbar.layout.brand -->
-
-					<!-- #section:basics/navbar.toggle -->
-
-					<!-- /section:basics/navbar.toggle -->
 				</div>
 
 				<!-- #section:basics/navbar.dropdown -->
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-					<li class="white-opaque">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<img class="nav-user-photo" src="assets/images/app_icon.png"  />
-								<span><b id="app-title" style="color:black"></b></span>
+						<li class="white-opaque">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+									<img class="nav-user-photo" src="assets/images/app_icon.png"  />
+									<span><b id="app-title" style="color:black"></b></span>
+									<i class="ace-icon fa fa-caret-down" style="color:black"></i>
+								</a>
 
-								<i class="ace-icon fa fa-caret-down" style="color:black"></i>
-							</a>
+								<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+									<li class="dropdown-content">
+										<ul class="dropdown-menu dropdown-navbar applistDrop" id="applist">
+										</ul>
+									</li>
 
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<!-- <li class="dropdown-header">
-									<i class="ace-icon fa fa-check"></i>
-									3 Apps&nbsp;&nbsp;&nbsp;&nbsp;
-									<i class="ace-icon fa fa-times"></i>
-									1 App
-								</li> -->
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar applistDrop" id="applist">
-									</ul>
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="addapp.html">
-										添加应用
-										<i class="menu-icon fa fa-tag"></i>
-									</a>
-								</li>
-                                <!--
-                                <li class="dropdown-footer">
-                                    <a href="profile.html">
-                                        账号管理
-                                        <i class="menu-icon fa fa-desktop"></i>
-                                    </a>
-                                </li>  -->
-							</ul>
+									<li class="dropdown-footer">
+										<a href="addapp.html">
+											添加应用
+											<i class="menu-icon fa fa-tag"></i>
+										</a>
+									</li>
+								</ul>
 						</li>
-					</li>
-					<li class="white-opaque" >
-	                   <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/user_ico.png" />
-								<span class="user-info" style="color:black">
-									<small>欢迎,</small>
-									guest
-									
-								</span>
+						<li class="white-opaque" >
+		                   		<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+									<img class="nav-user-photo" src="assets/images/user_ico.png" />
+									<span class="user-info" style="color:black">
+										<small>欢迎,</small>
+										guest
+									</span>
+									<i class="ace-icon fa fa-caret-down" style="color:black"></i>
+								</a>
 
-								<i class="ace-icon fa fa-caret-down" style="color:black"></i>
-							</a>
+								<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+									<li>
+										<a href="#">
+											<i class="ace-icon fa fa-cog"></i>
+											设置
+										</a>
+									</li>
 
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-cog"></i>
-										设置
-									</a>
-								</li>
+									<li>
+										<a href="profile.html">
+											<i class="ace-icon fa fa-user"></i>
+											账号管理
+										</a>
+									</li>
 
-								<li>
-									<a href="profile.html">
-										<i class="ace-icon fa fa-user"></i>
-										账号管理
-									</a>
-								</li>
+									<li class="divider"></li>
 
-								<li class="divider"></li>
-
-								<li>
-									<a href="/session/logout">
-										<i class="ace-icon fa fa-power-off"></i>
-										登出
-									</a>
-								</li>
-							</ul>
-					</li>
-
-
+									<li>
+										<a href="/session/logout">
+											<i class="ace-icon fa fa-power-off"></i>
+											登出
+										</a>
+									</li>
+								</ul>
+						</li>
 						<!-- /section:basics/navbar.user_menu -->
 
 				    </ul>
@@ -191,11 +165,10 @@
 			</script>
 
 			<!-- #section:basics/sidebar -->
-			<div id="sidebar" class="sidebar                  responsive">
+			<div id="sidebar" class="sidebar responsive">
 				<script type="text/javascript">
 					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
-
 
 				<ul class="nav nav-list">
 					<li class="active highlight">
@@ -213,45 +186,6 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-                    
-                    <!--
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-share-alt"></i>
-							<span class="menu-text"> Referrals </span>
-	
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-	
-						<b class="arrow"></b>
-	
-						<ul class="submenu">
-							<li class="" id="li-overview">
-								<a href="/referrals?overview">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Overview
-								</a>
-	
-								<b class="arrow"></b>
-							</li>
-							<li class="" id="li-rules">
-								<a href="/referrals?rules">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Reward Rules
-								</a>
-	
-								<b class="arrow"></b>
-							</li>
-							<li class="" id="li-influencers">
-								<a href="/referrals?influencers">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Influencers
-								</a>
-	
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>  -->
 					
 					<li class="">
 						<a href="marketing.html">
@@ -260,15 +194,6 @@
 						</a>
 						<b class="arrow"></b>
 					</li>
-
-					<!--
-					<li class="">
-						<a href="genURL.html">
-							<i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text"> URL生成 </span>
-						</a>
-						<b class="arrow"></b>
-					</li> -->
 
 				</ul><!-- /.nav-list -->
 
@@ -357,34 +282,18 @@
 										<div class="infobox infobox-green">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
-												<!--
-												<span class="sparkline" data-values="154,94,100,170,224,196,128,202,177"></span>
-												-->
 												<img src = 'assets/images/use_today_ico.png' style = "width:100%"/>
-
 											</div>
-<!-- 											<div class="easy-pie-chart percentage" data-percent="42" data-size="46"> -->
-<!-- 												<span class="percent">42</span>% -->
-<!-- 											</div> -->
 
 											<!-- /section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-data">
 												<div class="infobox-content center" style="color:grey"><b>今日使用</b></div>
 												<span class="infobox-data-number center" id="open_today" style="color:grey"></span>	
 											</div>
-
-											<!-- <div class="badge badge-success">
-												10%
-												<i class="ace-icon fa fa-arrow-up"></i>
-											</div> -->
 										</div>
-<!-- 										<div class="space-6"></div> -->
 										<div class="infobox infobox-blue">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
-												<!--
-												<span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
-												-->
 												<img src = 'assets/images/install_yes_ico.png' style = "width:100%"/>
 											</div>
 
@@ -393,37 +302,19 @@
 												<div class="infobox-content center" style="color:grey"><b>昨日安装</b></div>
 												<span class="infobox-data-number center" id="install_last_day" style="color:grey"></span>		
 											</div>
-
-											<!-- <div class="badge badge-success">
-												7.2%
-												<i class="ace-icon fa fa-arrow-up"></i>
-											</div> -->
 										</div>
 										<div class="infobox infobox-blue">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-chart">
-												<!--
-												<span class="sparkline" data-values="154,94,100,170,224,196,128,202,177"></span>
-												-->
 												<img src = 'assets/images/use_yes_ico.png' style = "width:100%"/>
 											</div>
-<!-- 											<div class="easy-pie-chart percentage" data-percent="42" data-size="46"> -->
-<!-- 												<span class="percent">42</span>% -->
-<!-- 											</div> -->
-
 											<!-- /section:pages/dashboard.infobox.sparkline -->
 											<div class="infobox-data">
 												<div class="infobox-content center" style="color:grey"><b>昨日使用</b></div>
 												<span class="infobox-data-number center" id="open_last_day" style="color:grey"></span>
 											</div>
-
-											<!-- <div class="badge badge-success">
-												10%
-												<i class="ace-icon fa fa-arrow-up"></i>
-											</div> -->
 										</div>
 									</div>
-
 									<div class="vspace-12-sm"></div>
 								</div><!-- /.row -->
 
@@ -471,7 +362,7 @@
 											   </button>
 											   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" id="chanelList">
 
-											   <!--
+											   <!-- 
 											      <li role="presentation">
 											         <a role="menuitem" tabindex="-1" href="#">Java</a>
 											      </li>
@@ -484,40 +375,22 @@
 
 										</h3>
 									</div>
+									<div id="datachart" class="col-sm-12" >
 									<!--
-									<div class="col-sm-3" style="margin-top: 24px;text-align: right;
-								font-size: 14px;font-weight: bold;color: #2283c5">
-									选择时段:</div>
-									<div class="col-sm-3">
-										<div class="input-daterange input-group" style="margin-top: 20px">
-											<input type="text" class="input-sm form-control" name="start"/>
-											<span class="input-group-addon">
-												<i class="fa fa-exchange"></i>
-											</span>
-
-											<input type="text" class="input-sm form-control" name="end"/>
+										<div class="col-sm-6">
+											<div id="main" style="height:400px;"></div>
 										</div>
-									</div>
-								</div> -->
-								<div id="datachart" class="col-sm-12" >
-								<!--
-									<div class="col-sm-6">
-										<div id="main" style="height:400px;"></div>
-									</div>
 
-                                    <div class="col-sm-6">
-                                        <div id="main1" style="height:400px;"></div>
-                                    </div> 
+	                                    <div class="col-sm-6">
+	                                        <div id="main1" style="height:400px;"></div>
+	                                    </div> 
 
-                                    <div class="col-sm-12">
-										<div id="wechatpie" style="height:400px;"></div>
-									</div> -->
-                     
-                                </div>
-                     
-
-                     
-								<!-- PAGE CONTENT ENDS -->
+	                                    <div class="col-sm-12">
+											<div id="wechatpie" style="height:400px;"></div>
+										</div> 
+									-->
+	                                </div>
+	                             </div>
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
@@ -532,12 +405,11 @@
 							<span class="blue bolder">DeepShare</span>
 							Application &copy; 2015
 						</span>
-
 					</div>
-
 					<!-- /section:basics/footer -->
 				</div>
 			</div>
+
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
@@ -553,10 +425,10 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
+		<script type="text/javascript">
+		 window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 		</script>
@@ -596,7 +468,11 @@
 		<!-- inline scripts related to this page -->
 
 		<script type="text/javascript">
-            console.log("pos0");
+            //console.log("pos0");
+            var appidPre = 0
+			var granPre = 0
+			var appNames;
+
             echartsOption = {};
             echartsOption.gran = "day";  
 
@@ -606,17 +482,10 @@
 				a = a.valueOf();
 				a = a + dadd * 24 * 60 * 60 * 1000;
 				a = new Date(a);
-				console.log(a);
+				//console.log(a);
 				return a;
-			} 
-			var appidPre = 0
-			var granPre = 0
-			var appNames;
+			}
 
-			/*
-			function getDataChangedbyappid(appid) {
-				getData(appid, granPre)
-			}  */
 			function getAppname() {
 				/*
 				$.ajax({    
@@ -642,7 +511,7 @@
 			getAppname();
 
 			function selectAppIndex(selectedAppIndex) {
-				console.log("selectAppIndex " + selectedAppIndex);
+				//console.log("selectAppIndex " + selectedAppIndex);
 				echartsOption.appIndex = selectedAppIndex;
 				printChannelName();
 				echartsOption.channelIndex = 0;
@@ -650,19 +519,17 @@
 			}
 
 			function printAppname() {
-				console.log(appNames);
+				//console.log(appNames);
 				$("#app-title").html(appNames[echartsOption.appIndex].appname);
 				$("#applist").empty();
 				for(var a in appNames) {
 					$("#applist").append('<li class='+(a==echartsOption.appIndex?'active':'')+'>'+'<a href="javascript:selectAppIndex('+a+')"><div class="clearfix"><span class="pull-left">'+appNames[a].appname+'</span>'+'<span class="pull-right"><i class="fa fa-check"></i></span></div></a></li>');
-					//if (appNames[a] == result.appname)
-					//		appidPre = a
                     }
 			};
 			//printAppname();
 
 			function selectChannelIndex(selectedChannelIndex) {
-				console.log("selectChannelIndex " + selectedChannelIndex);
+				//console.log("selectChannelIndex " + selectedChannelIndex);
 				echartsOption.channelIndex = selectedChannelIndex;
 				printData();
 
@@ -723,19 +590,9 @@
                     success: function (result) { */
 
 
-		                console.log("pos01");
+		                //console.log("pos01");
 		                var result = {"data":[{"open_with_param":3,"install_with_param":2,"userlink_wechat":20},{"open_with_param":4,"install_with_param":4,"userlink_wechat":20},{"open_with_param":5,"install_with_param":4,"userlink_wechat":20},{"open_with_param":2,"install_with_param":4,"userlink_wechat":20},{"open_with_param":4,"install_with_param":6,"userlink_wechat":20},{"open_with_param":1,"install_with_param":8,"userlink_wechat":20},{"open_with_param":9,"install_with_param":2,"userlink_wechat":20},{"open_with_param":8,"install_with_param":6,"userlink_wechat":20},{"open_with_param":4,"install_with_param":3,"userlink_wechat":20},{"open_with_param":6,"install_with_param":9,"userlink_wechat":20}]};
-		                console.log("pos02");
-                
-                        // result.applist=[]
-                        /*
-                       	$("#applist").empty()
-                        for(var a in result.applist) {
-							$("#applist").append('<li class='+(result.applist[a].appname==result.appname?'active':'')+'>'+'<a href="#"><div class="clearfix"><span class="pull-left">'+result.applist[a].appname+'</span>'+
-								'<span class="pull-right"><i class="fa fa-check"></i></span></div></a></li>');
-							if (result.applist[a].appname==result.appname)
-								appidPre = a
-                        } */
+		                //console.log("pos02");
                         
                         var x = new Array(); 
                         var openlist = new Array(); 
@@ -745,13 +602,12 @@
                         for(var i in result.data) {
                             //x[i] = addDate(i-result.data.length).getDate();
                             x[i] = "" + (i - result.data.length);
-                            //x[i] = i;
                         	openlist[i] = result.data[numberOfData - i].open_with_param;
                         	installlist[i] = result.data[numberOfData - i].install_with_param;
                         	otherlist[i] = result.data[numberOfData - i].userlink_wechat - openlist[i] - installlist[i];
                         }
 
-                        console.log(x);
+                        //console.log(x);
                         require.config({
             	            paths: {
             	            	echarts: 'assets/js'
@@ -766,7 +622,7 @@
             	                function (ec) {
             	                    var myChart = ec.init(document.getElementById('main'));
             	                    var option = {
-                                            color : ["#ff7f50","#87cefa"],
+                                            color : ["#ff7f50"],
                                 
             	                    	    title : {
             	                    	    //    text: '安装',
@@ -776,7 +632,7 @@
             	                    	        trigger: 'axis'
             	                    	    },
             	                    	    legend: {
-            	                    	        data:['新用户安装','老用户打开']
+            	                    	        data:['新用户安装']
             	                    	    },
             	                    	    toolbox: {
             	                    	        show : true,
@@ -806,17 +662,6 @@
             	                    	            name:'新用户安装',
             	                    	            type:'line',
             	                    	            data:installlist,
-            	                    	            markPoint : {
-            	                    	                data : [
-            	                    	                    {type : 'max', name: '最大值'},
-            	                    	                    {type : 'min', name: '最小值'}
-            	                    	                ]
-            	                    	            }
-            	                    	        },
-            	                    	         {
-            	                    	            name:'老用户打开',
-            	                    	            type:'line',
-            	                    	            data:openlist,
             	                    	            markPoint : {
             	                    	                data : [
             	                    	                    {type : 'max', name: '最大值'},
@@ -985,12 +830,7 @@
 
 
 			};
-			/*
-			function getData(appid, gran) {
-				console.log(echartsOption);
-				console.log(appid);
-				printData();
-			}; */
+
 			$(document).ready(function(){
 				$("#hourcount").click(function() {
 					$(".pagination li").removeClass("active");
@@ -1024,21 +864,21 @@
 
 			jQuery(function($) {
 				//printData();
-				console.log("pos02");
+				//console.log("pos02");
 				$('.input-daterange').datepicker({autoclose:true,format:'yyyy-mm-dd'});
 				
 				$(document).delegate('.applistDrop a', 'click', function(appid){
 					//TODO：点击后应该触发切换app的action，所有展示数字全部重新获取
 					//getData(传入appid);
 					//getData();
-					console.log("pos201");
+					//console.log("pos201");
 					var title=$(this).children("div").children("span.pull-left").html();
-					console.log(title);
+					//console.log(title);
 					$("#app-title").html(title);
 					$(this).parent().siblings().removeClass("active");
 					$(this).parent().addClass("active");
 				}); 
-				console.log("pos03");
+				//console.log("pos03");
 				$('[data-rel=tooltip]').tooltip();
 				
 				$(".select2").css('width','200px').select2({allowClear:true})

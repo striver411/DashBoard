@@ -253,51 +253,9 @@
 	                        </span>
                         </text>
                     </label>
-                    <!--
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="exampleModalLabel">合作条款</h4>
-                                    </div>
-                                    <form  id="new-channel-form">
-                                    <div class="modal-body">
-                                     	  <div class="form-group">
-                                     	   		<label for="channel-type-text" class="control-label">渠道类型</label>
-                                              
-                                     	  </div>
-                                          
-                                            <div class="form-group">
-                                                <label for="channel-type-text" class="control-label">渠道类型</label>
-                                                <input type="text" class="form-control" id="channel-type-text">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="channel-name-text" class="control-label">渠道名称</label>
-                                                <input type="text" class="form-control" id="channel-name-text">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="channel-number-text" class="control-label">渠道编号及备注</label>
-                                                <input type="text" class="form-control" id="channel-number-text">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="channel-url-text" class="control-label">URL</label>
-                                                <input type="text" class="form-control" id="channel-url-text">
-                                            </div>  
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">同意条款</button>
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div> -->
 
 					</div>
 					
-     
-
 			  	  <div class="form-group">
 			  	  	<div class="col-sm-offset-4 col-sm-10" style="color: #990033;"></div>
 				  </div>
@@ -322,10 +280,10 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
+		<script type="text/javascript">
+		 window.jQuery || document.write("<script src='assets/js/jquery1x.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 		</script>
@@ -380,30 +338,13 @@
          		$("#user_agree_box").prop("checked", true)
          	}
 			function popupDiv(div_id) {   
-		        var div_obj = $("#"+div_id);  
-		        var windowWidth = document.body.clientWidth;       
-		        var windowHeight = document.body.clientHeight;  
-		        var popupHeight = div_obj.height();       
-		        var popupWidth = div_obj.width();    
-		        //添加并显示遮罩层  
-		        /* 
-		        $("<div id='mask'></div>").addClass("mask")   
-		                                  .width(windowWidth + document.body.scrollWidth)   
-		                                  .height(windowHeight + document.body.scrollHeight)   
-		                                  .click(function() {hideDiv(div_id); })   
-		                                  .appendTo("body")   
-		                                  .fadeIn(200); 
-		        */  
-		        div_obj.animate({opacity: "show"}, "slow");   
-		                        
+		        $("#"+div_id).animate({opacity: "show"}, "slow");  
 		    }   
 		      
 		    function hideDiv(div_id) {   
-		        //$("#mask").remove();   
 		        $("#" + div_id).animate({opacity: "hide" }, "slow");   
 		    }  
 			function submitToBackEnd() {
-				//console.log( $("#username_login").val() + " " + $("#password_login").val());	
 				/* 
 				$.ajax({
 		                    type: "POST",
@@ -422,7 +363,7 @@
 		                    		$("#username_login").val("");
 		                    		$("#password_login").val("");
 		                    	}
-		      /*              },
+		      	/*          },
 		                    error: function(data) {
 		                        alert("error:"+data.responseText);
 		                    }
@@ -430,7 +371,5 @@
 				}
    
 		</script>  
-​
-​
 	</body>
 </html>
