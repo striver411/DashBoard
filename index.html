@@ -37,7 +37,7 @@
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
-		<script src="assets/js/ace-extra.js"></script>
+		<script src="assets/js/ace/ace-extra.js"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -443,12 +443,7 @@
 		<script src="assets/js/jquery.ui.touch-punch.js"></script>
 		<script src="assets/js/jquery.easypiechart.js"></script>
 		<script src="assets/js/jquery.sparkline.js"></script>
-		<script src="assets/js/flot/jquery.flot.js"></script>
-		<script src="assets/js/flot/jquery.flot.pie.js"></script>
-		<script src="assets/js/flot/jquery.flot.resize.js"></script>
 		<script src="assets/js/select2.js"></script>
-		<script src="assets/js/date-time/bootstrap-datepicker.js"></script>
-		<script src="assets/js/date-time/daterangepicker.js"></script>
 		
 		<!-- ace scripts -->
 		<script src="assets/js/ace/elements.scroller.js"></script>
@@ -461,7 +456,7 @@
 		<script src="assets/js/ace/ace.widget-box.js"></script>
 		<script src="assets/js/ace/ace.widget-on-reload.js"></script>
 
-		<script src="assets/js/echarts.js"></script>
+		<script src="assets/js/chart/echarts.js"></script>
 		<script type="text/javascript">
 	        
 	    </script>
@@ -865,7 +860,6 @@
 			jQuery(function($) {
 				//printData();
 				//console.log("pos02");
-				$('.input-daterange').datepicker({autoclose:true,format:'yyyy-mm-dd'});
 				
 				$(document).delegate('.applistDrop a', 'click', function(appid){
 					//TODO：点击后应该触发切换app的action，所有展示数字全部重新获取
@@ -935,12 +929,5 @@
 							
 			})
 		</script>
-
-		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
-		<link rel="stylesheet" href="assets/css/ace.onpage-help.css" />
-
-		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
-		<script src="assets/js/ace/elements.onpage-help.js"></script>
-		<script src="assets/js/ace/ace.onpage-help.js"></script>
 	</body>
 </html>
