@@ -277,8 +277,9 @@
                                                         <th class="hidden-xs">渠道编号及备注</th>
 														<th class="hidden-480">自定义指标_客单价</th>
 														<th>下载</th>
-														<th>激活</th>
+														<th>首次使用</th>
                                                         <th>三日留存</th>
+                                                        <th>七日留存</th>
 													</tr>
 
 												</thead>
@@ -347,10 +348,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--
 										<button type="submit" class="btn btn-sm btn-light" >
 											<i class="ace-icon fa fa-plus"></i>
 											<span class="bigger-110">自定义渠道</span>
-										</button>
+										</button> -->
 									</div>
 								</div>
 								
@@ -527,14 +529,14 @@
                     dataType: "json",
                     url: "/apps/"+appNames[tableOption.appIndex].appid+"/channels/?typeid="+(tableOption.typeIndex >= 0 ? typeNames[tableOption.typeIndex].typeid : ""),
                     success:function (result) { */
-			            	var result = {"data":[{"typename":"搜索引擎", "channelname":"百度关键词", "remark":"百度_关键词_巴黎", "download":"156", "activate":"25%", "remainthreedays":"52%"}]};
+			            	var result = {"data":[{"typename":"搜索引擎", "channelname":"百度关键词", "remark":"百度_关键词_巴黎", "download":"156", "activate":"25%", "remainthreedays":"52%", "remainsevendays":"30%"}]};
 
 			            	//result = {};
 			            	//console.log("displayData: ");
 			            	$("#channelInfoList").empty();
 			            	for (var a in result.data) {
 			            		 //console.log(a);
-			            		$("#channelInfoList").append('<tr><td class="center">'+result.data[a].typename+'</td><td>'+result.data[a].channelname+'</td><td class="hidden-xs">'+result.data[a].remark+'</td><td>NA</td><td class="hidden-480">'+result.data[a].download+'</td><td>'+result.data[a].activate+'</td><td>'+result.data[a].remainthreedays+'</td></tr>');
+			            		$("#channelInfoList").append('<tr><td class="center">'+result.data[a].typename+'</td><td>'+result.data[a].channelname+'</td><td class="hidden-xs">'+result.data[a].remark+'</td><td>NA</td><td class="hidden-480">'+result.data[a].download+'</td><td>'+result.data[a].activate+'</td><td>'+result.data[a].remainthreedays+'</td><td>'+result.data[a].remainsevendays+'</td></tr>');
 			            	};
 			            	$("#noChannelDisp").empty();
 			            	if (result.data == null)
