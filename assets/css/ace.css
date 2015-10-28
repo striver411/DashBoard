@@ -3307,7 +3307,7 @@ body.mob-safari .sidebar.sidebar-fixed {
 .main-container .menu-toggler {
   display: none;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 100px) {
   .sidebar.responsive:before {
     display: none;
   }
@@ -3355,7 +3355,7 @@ body.mob-safari .sidebar.sidebar-fixed {
     transform: translateX(105px);
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 100) {
   .sidebar.responsive.menu-min {
     -moz-transform: translateX(-53px);
     -webkit-transform: translateX(-53px);
@@ -3369,7 +3369,7 @@ body.mob-safari .sidebar.sidebar-fixed {
     -o-transform: none !important;
     -ms-transform: none !important;
     transform: none !important;
-    overflow: visible;
+    overflow: visible; 
     max-height: 2000px;
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;

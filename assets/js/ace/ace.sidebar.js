@@ -474,7 +474,6 @@
 	})
 	//sidebar collapse/expand button
 	.on(ace.click_event+'.ace.menu', '.sidebar-collapse', function(e){
-		
 		var target = $(this).attr('data-target'), $sidebar = null;
 		if(target) $sidebar = $(target);
 		if($sidebar == null || $sidebar.length == 0) $sidebar = $(this).closest('.sidebar');
