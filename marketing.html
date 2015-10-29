@@ -290,30 +290,30 @@
 														<th class="hidden-480">自定义指标_客单价</th>
 														<th >下载
 															  <div style="display:inline-block">
-   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+   														      <span class="up-caret" style="display:block;margin-bottom:4px" onclick=sortAsc('download')></span>
   															
-  															  <span class="caret" style="display:block;margin-top:4px"></span>
+  															  <span class="caret" style="display:block;margin-top:4px" onclick=sortDec('download')></span>
 											      			</div>
 														</th>
 														<th>首次使用
 															   <div style="display:inline-block">
-   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+   														      <span class="up-caret" style="display:block;margin-bottom:4px"onclick=sortAsc('activate')></span>
   															
-  															  <span class="caret" style="display:block;margin-top:4px"></span>
+  															  <span class="caret" style="display:block;margin-top:4px" onclick=sortDec('activate')></span>
 											      			</div>
 														</th>
                                                         <th>三日留存
                                                         		 <div style="display:inline-block">
-   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+   														      <span class="up-caret" style="display:block;margin-bottom:4px"onclick=sortAsc('remainthreedays')></span>
   															
-  															  <span class="caret" style="display:block;margin-top:4px"></span>
+  															  <span class="caret" style="display:block;margin-top:4px" onclick=sortDec('remainthreedays')></span>
 											      			</div>
                                                         </th>
                                                         <th>七日留存
                                                         	 <div style="display:inline-block">
-   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+   														      <span class="up-caret" style="display:block;margin-bottom:4px" onclick=sortAsc('remainsevendays')></span>
   															
-  															  <span class="caret" style="display:block;margin-top:4px"></span>
+  															  <span class="caret" style="display:block;margin-top:4px"onclick=sortDec('remainsevendays')></span>
 											      			</div>
 
                                                         </th>
@@ -506,6 +506,7 @@
 			}
 
             tableOption = {};
+            tabledata = {};
 
 			function getAppname() {
 				/*
@@ -575,6 +576,53 @@
 					$("#typeList").append('<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:selectTypeIndex('+a+')">'+typeNames[a].typename+'</a></li>');
 				}
 			}
+			function sortAsc(name) {
+				console.log("UP " + name);
+				var by = function(name){
+					return function(o, p) {
+						var a, b;
+						if (typeof o === "object" && typeof p === "object" && o && p) {
+							a = o[name];
+							b = p[name];
+							if (a === b) {return 0;}
+							if (typeof a === typeof b) { return a < b ? -1 : 1;}
+							return typeof a < typeof b ? -1 : 1;
+						}else {throw ("error"); }
+						}
+				}
+            	tabledata.sort(by(name));
+            	displayDataIntable(tabledata);
+
+			}
+
+			function sortDec(name) {
+				console.log("DOWN " + name);
+				var by = function(name){
+					return function(o, p) {
+						var a, b;
+						if (typeof o === "object" && typeof p === "object" && o && p) {
+							a = o[name];
+							b = p[name];
+							if (a === b) {return 0;}
+							if (typeof a === typeof b) { return a > b ? -1 : 1;}
+							return typeof a > typeof b ? -1 : 1;
+						}else {throw ("error"); }
+						}
+				}
+            	tabledata.sort(by(name));
+            	displayDataIntable(tabledata);
+			}
+
+			function displayDataIntable(data) {
+				$("#channelInfoList").empty();
+            	for (var a in data) {
+            		 //console.log(a);
+            		$("#channelInfoList").append('<tr><td class="center">'+data[a].typename+'</td><td>'+data[a].channelname+'</td><td class="hidden-xs">'+data[a].remark+'</td><td>NA</td><td class="hidden-480">'+data[a].download+'</td><td>'+data[a].activate+'</td><td>'+data[a].remainthreedays+'</td><td>'+data[a].remainsevendays+'</td></tr>');
+            	};
+            	$("#noChannelDisp").empty();
+            	if (data == null)
+            			$("#noChannelDisp").append('<div id = "noChannelDisp"><div style="height: 200px;text-align: center;font-size: 40px;color: #bbb;padding-top: 70px"> No marketing links found</div></div>');
+			}
 
             function displayData(channeldata) {
 				/*
@@ -583,18 +631,13 @@
                     dataType: "json",
                     url: "/apps/"+appNames[tableOption.appIndex].appid+"/channels/?typeid="+(tableOption.typeIndex >= 0 ? typeNames[tableOption.typeIndex].typeid : ""),
                     success:function (result) { */
-			            	var result = {"data":[{"typename":"搜索引擎", "channelname":"百度关键词", "remark":"百度_关键词_巴黎", "download":"156", "activate":"25%", "remainthreedays":"52%", "remainsevendays":"30%"}]};
+			            	var result = {"data":[{"typename":"搜索引擎", "channelname":"百度关键词", "remark":"百度_关键词_巴黎", "download":"156", "activate":"25%", "remainthreedays":"52%", "remainsevendays":"30%"},{"typename":"朋友分享", "channelname":"微信", "remark":"微信关键词", "download":"100", "activate":"35%", "remainthreedays":"32%", "remainsevendays":"40%"}]};
+			            	tabledata = result.data;
+			            	displayDataIntable(result.data);
 
 			            	//result = {};
 			            	//console.log("displayData: ");
-			            	$("#channelInfoList").empty();
-			            	for (var a in result.data) {
-			            		 //console.log(a);
-			            		$("#channelInfoList").append('<tr><td class="center">'+result.data[a].typename+'</td><td>'+result.data[a].channelname+'</td><td class="hidden-xs">'+result.data[a].remark+'</td><td>NA</td><td class="hidden-480">'+result.data[a].download+'</td><td>'+result.data[a].activate+'</td><td>'+result.data[a].remainthreedays+'</td><td>'+result.data[a].remainsevendays+'</td></tr>');
-			            	};
-			            	$("#noChannelDisp").empty();
-			            	if (result.data == null)
-			            			$("#noChannelDisp").append('<div id = "noChannelDisp"><div style="height: 200px;text-align: center;font-size: 40px;color: #bbb;padding-top: 70px"> No marketing links found</div></div>');
+			      
 					/*  },
                     error: function(data) {
 	                    alert("error 2:"+data.responseText);
