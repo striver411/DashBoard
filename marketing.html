@@ -62,6 +62,19 @@
 				height: 30px;
 				width: 30px;
 			}
+			.up-caret{
+
+			  display: inline-block;
+			  width: 0;
+			  height: 0;
+			  margin-left: 2px;
+			  vertical-align: middle;
+			  border-top: 0;
+			  border-right: 4px solid transparent;
+			  border-left: 4px solid transparent;
+			  border-bottom: 4px solid;
+			  content: "";
+			}
 		</style>
 	</head>
 
@@ -74,7 +87,7 @@
 
 			<div class="navbar-container" id="navbar-container">
 				<!-- #section:basics/sidebar.mobile.toggle -->
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+				<!-- <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
 					<span class="sr-only">Toggle sidebar</span>
 
 					<span class="icon-bar"></span>
@@ -82,15 +95,14 @@
 					<span class="icon-bar"></span>
 
 					<span class="icon-bar"></span>
-				</button>
+				</button> -->
 
 				<!-- /section:basics/sidebar.mobile.toggle -->
-				<div class="navbar-header pull-left">
+				<div class="navbar-header pull-left" style="padding-left:30px">
 					<!-- #section:basics/navbar.layout.brand -->
-					<a href="#" class="navbar-brand" style="padding-bottom:0px">
+					<a href="#" class="navbar-brand">
 						<small>
-							<i> <img src="assets/images/logo_inside.png" width="23%" style="padding-left:3%"> </i>
-							
+							<i> <img src="assets/images/logo_inside.png" width="130px"> </i>
 						</small>
 					</a>
 
@@ -210,7 +222,7 @@
 
 				<!-- #section:basics/sidebar.layout.minimize -->
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right" id = "menuIcon"></i>
 				</div>
 
 				<!-- /section:basics/sidebar.layout.minimize -->
@@ -276,10 +288,35 @@
 														<th>渠道名称</th>
                                                         <th class="hidden-xs">渠道编号及备注</th>
 														<th class="hidden-480">自定义指标_客单价</th>
-														<th>下载</th>
-														<th>首次使用</th>
-                                                        <th>三日留存</th>
-                                                        <th>七日留存</th>
+														<th >下载
+															  <div style="display:inline-block">
+   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+  															
+  															  <span class="caret" style="display:block;margin-top:4px"></span>
+											      			</div>
+														</th>
+														<th>首次使用
+															   <div style="display:inline-block">
+   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+  															
+  															  <span class="caret" style="display:block;margin-top:4px"></span>
+											      			</div>
+														</th>
+                                                        <th>三日留存
+                                                        		 <div style="display:inline-block">
+   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+  															
+  															  <span class="caret" style="display:block;margin-top:4px"></span>
+											      			</div>
+                                                        </th>
+                                                        <th>七日留存
+                                                        	 <div style="display:inline-block">
+   														      <span class="up-caret" style="display:block;margin-bottom:4px"></span>
+  															
+  															  <span class="caret" style="display:block;margin-top:4px"></span>
+											      			</div>
+
+                                                        </th>
 													</tr>
 
 												</thead>
@@ -423,6 +460,23 @@
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
+
+			var beforeWidth = document.body.clientWidth;
+            if (beforeWidth < 750) {
+            	$('#sidebar').ace_sidebar('toggleMenu');
+            }
+            window.onresize = function() { 
+				var width = document.body.clientWidth,
+					curentMenu = $("#menuIcon").hasClass('fa-angle-double-left');
+				if (width < 750 && beforeWidth >= 750 && curentMenu) {
+					$('#sidebar').ace_sidebar('toggleMenu');
+				}
+				if (width > 750 && beforeWidth <= 750 && !curentMenu) {
+					$('#sidebar').ace_sidebar('toggleMenu');
+				}
+				beforeWidth = width;
+				console.log(width);
+				}; 
 
 			function updataURL() {
 				var URL = "http://fds.so/?";

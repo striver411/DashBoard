@@ -199,7 +199,7 @@
 
 				<!-- #section:basics/sidebar.layout.minimize -->
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right" id = "menuIcon"></i>
 				</div>
 
 				<!-- /section:basics/sidebar.layout.minimize -->
@@ -322,9 +322,9 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<ul class="pagination">
-											<li id = "hourcount">
+											<!-- <li id = "hourcount">
 												<a href="#" >按时统计</a>
-											</li>
+											</li> -->
 											<li class="active" id = "daycount">
 												<a href="#">按天统计</a>
 											</li>
@@ -336,7 +336,7 @@
 											</li>
 										</ul>
 
-										<span class="dropdown" style = "float:right; margin-right:30px">
+										<span class="dropdown" style = "float:right; margin-right:30px; margin-top:20px">
    											<button class="btn dropdown-toggle btn-sm btn-info" id="dropdownMenu2" data-toggle="dropdown">
 											      图像种类
 											      <span class="caret"></span>
@@ -485,8 +485,24 @@
 		<script type="text/javascript">
             //console.log("pos0");
 
-            //console.log("is : " + ace.sidebar);
-
+            //console.log("is : " + $('#sidebar').minimized);
+            //console.log($("#menuIcon").hasClass('fa-angle-double-left'));
+            var beforeWidth = document.body.clientWidth;
+            if (beforeWidth < 750) {
+            	$('#sidebar').ace_sidebar('toggleMenu');
+            }
+            window.onresize = function() { 
+				var width = document.body.clientWidth,
+					curentMenu = $("#menuIcon").hasClass('fa-angle-double-left');
+				if (width < 750 && beforeWidth >= 750 && curentMenu) {
+					$('#sidebar').ace_sidebar('toggleMenu');
+				}
+				if (width > 750 && beforeWidth <= 750 && !curentMenu) {
+					$('#sidebar').ace_sidebar('toggleMenu');
+				}
+				beforeWidth = width;
+				console.log(width);
+				}; 
 
             var appidPre = 0
 			var granPre = 0
