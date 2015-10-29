@@ -533,12 +533,14 @@
 			function selectAppIndex(selectedAppIndex) {
 				//console.log("selectAppIndex " + selectedAppIndex);
 				tableOption.appIndex = selectedAppIndex;
+				printAppname();
 				getChannelName();
 			}
 
 			function printAppname() {
 				//console.log(appNames);
 				$("#app-title").html(appNames[tableOption.appIndex].appname);
+				$("#applist").empty();
 				for(var a in appNames) {
 					$("#applist").append('<li class='+(a==tableOption.appIndex?'active':'')+'>'+'<a href="javascript:selectAppIndex('+a+')"><div class="clearfix"><span class="pull-left">'+appNames[a].appname+'</span>'+'<span class="pull-right"><i class="fa fa-check"></i></span></div></a></li>');
                     }
@@ -614,6 +616,7 @@
 			}
 
 			function displayDataIntable(data) {
+				console.log("print table one time");
 				$("#channelInfoList").empty();
             	for (var a in data) {
             		 //console.log(a);
